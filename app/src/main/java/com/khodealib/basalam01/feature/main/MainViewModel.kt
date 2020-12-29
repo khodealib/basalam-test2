@@ -5,7 +5,6 @@ import com.khodealib.basalam01.common.BaseObserver
 import com.khodealib.basalam01.common.BaseViewModel
 import com.khodealib.basalam01.data.Product
 import com.khodealib.basalam01.data.repo.product.ProductRepository
-import io.reactivex.Completable
 import io.reactivex.CompletableObserver
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

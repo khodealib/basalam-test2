@@ -25,7 +25,7 @@ class ProductListAdapter(private val productList: List<Product>) :
 
     override fun getItemCount(): Int = productList.size
 
-    class ProductItemViewHolder(var itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ProductItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val productImg: ImageView = itemView.findViewById(R.id.iv_product_image)
         private val productCountTv: TextView = itemView.findViewById(R.id.tv_product_count)
@@ -38,10 +38,12 @@ class ProductListAdapter(private val productList: List<Product>) :
         fun bind(product: Product) {
             Picasso.get()
                 .load(product.photo.url)
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_background)
                 .into(productImg)
 
             productCountTv.apply {
-                text = " (${product.rating.count}) "
+                " (${product.rating.count}) ".also { text = it }
             }
 
             productRateTv.apply {
@@ -57,11 +59,11 @@ class ProductListAdapter(private val productList: List<Product>) :
             }
 
             productPriceTv.apply {
-                text = " تومان${product.price}"
+                "${product.price} تومان ".also { text = it }
             }
 
             productWeightTv.apply {
-                text = " کیلوگرم${product.weight}"
+                "${product.weight}کیلوگرم ".also { text = it }
             }
         }
     }

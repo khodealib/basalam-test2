@@ -42,7 +42,6 @@ class MainActivity : BaseActivity() {
                 adapter = productAdapter
                 layoutManager = gridLayoutManager
             }
-
         }
     }
 }
