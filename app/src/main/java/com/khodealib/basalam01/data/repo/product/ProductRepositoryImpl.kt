@@ -24,7 +24,7 @@ class ProductRepositoryImpl(
 
     override fun getProducts(): Single<List<Product>> {
 
-        return productLocalDataSource.getProducts()
+        return productRemoteDataSource.getProducts()
     }
 
 }

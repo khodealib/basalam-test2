@@ -24,23 +24,23 @@ class MainViewModel(
         progressBarLiveData.value = true
 
         // refresh database
-        productRepository.refreshProduct()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object :CompletableObserver{
-                override fun onSubscribe(d: Disposable) {
-                    compositeDisposable.add(d)
-                }
-
-                override fun onComplete() {
-                    Timber.i("database refreshed")
-                }
-
-                override fun onError(e: Throwable) {
-                    Timber.i(e)
-                }
-
-            })
+//        productRepository.refreshProduct()
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe(object :CompletableObserver{
+//                override fun onSubscribe(d: Disposable) {
+//                    compositeDisposable.add(d)
+//                }
+//
+//                override fun onComplete() {
+//                    Timber.i("database refreshed")
+//                }
+//
+//                override fun onError(e: Throwable) {
+//                    Timber.i(e)
+//                }
+//
+//            })
 
         productRepository.getProducts()
             .subscribeOn(Schedulers.io())

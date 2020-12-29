@@ -38,8 +38,7 @@ class ProductListAdapter(private val productList: List<Product>) :
         fun bind(product: Product) {
             Picasso.get()
                 .load(product.photo.url)
-                .placeholder(R.drawable.ic_launcher_foreground)
-                .error(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_spinner_loading)
                 .into(productImg)
 
             productCountTv.apply {
